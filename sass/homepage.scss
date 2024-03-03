@@ -15,10 +15,11 @@ body {
     position: relative;
     z-index: 1;
 
-    p {
+    h1 {
         font-family: 'Shrikhand', sans-serif;
         margin: 0;
         font-size: 30px;
+        font-style: italic;
     }
 }
 
@@ -69,5 +70,60 @@ body {
         box-shadow: 0px 4px 10px 0px #00000040;
         border: none;
         font-size: 16px;
+    }
+}
+
+.functioning {
+    margin-top: 30px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+
+    h2{
+        margin:0
+    }
+
+    .step {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+
+        span {
+            height: 24px;
+            width: 24px;
+            border-radius: 25px;
+            background-color: #9356DC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: absolute;
+            z-index: 1;
+            font-size: 14px;
+        }
+
+        div {
+            height: 72px;
+            width: calc(100% - 12px);
+            display: flex;
+            align-items: center;
+            background-color: #F6F6F6;
+            border-radius: 20px;
+            position: relative;
+            left: 12px;
+            box-shadow: 0px 4px 15px 0px #00000026;
+
+            img {
+                left: 30px;
+                position: relative;
+            }
+
+            p {
+                position: relative;
+                left: 55px;
+                font-weight: bold;
+            }
+        }
     }
 }
