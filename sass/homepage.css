@@ -8,19 +8,27 @@ body {
 
 @keyframes loader {
   0% {
-    display: block;
+    background: #9356DC;
+    display: flex;
     opacity: 1;
-    background-color: #9356DC;
+  }
+  25% {
+    background: #9356DC;
   }
   50% {
+    background: #B659FD;
+  }
+  80% {
+    background: #B05C98;
     opacity: 1;
   }
-  90% {
-    opacity: 1;
+  99% {
+    opacity: 0;
+    display: none;
   }
   100% {
-    display: none;
-    z-index: -1;
+    background-color: #FF79DA;
+    z-index: -5;
   }
 }
 @keyframes spin {
@@ -29,29 +37,32 @@ body {
   }
   100% {
     display: none;
-    transform: rotate(360deg);
+    transform: rotate(720deg);
     z-index: -12;
     opacity: 0;
   }
 }
 .loader {
+  opacity: 0;
   width: 100%;
   height: 100%;
   position: fixed;
-  z-index: 5;
+  z-index: 999;
   animation-name: loader;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-fill-mode: forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .loader .spinner {
-  position: fixed;
-  border: 16px solid #f3f3f3;
+  position: relative;
   border-radius: 50%;
-  border-top: 16px solid #3498db;
+  border-top: 16px solid white;
   width: 120px;
   height: 120px;
-  z-index: 5;
-  animation: spin 2s;
+  z-index: 999;
+  animation: spin 3s;
   animation-fill-mode: forwards;
 }
 
