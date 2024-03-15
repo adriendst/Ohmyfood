@@ -99,17 +99,19 @@ footer div .link a {
   text-decoration: none;
   color: white;
 }
-footer div div {
+footer div div a {
+  text-decoration: none;
+  color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
 }
-footer div div img {
+footer div div a img {
   width: 11px;
   height: 13px;
 }
-footer div div p {
+footer div div a p {
   margin: 0;
 }
 
