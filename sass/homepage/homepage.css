@@ -1,11 +1,3 @@
-* {
-  font-family: "Roboto", sans-serif;
-}
-
-body {
-  margin: 0;
-}
-
 @keyframes loader {
   0% {
     background: #9356DC;
@@ -75,7 +67,7 @@ body {
   position: relative;
   z-index: 1;
 }
-.logo h1 {
+.logo h2 {
   font-family: "Shrikhand", sans-serif;
   margin: 0;
   font-size: 30px;
@@ -93,6 +85,17 @@ body {
   font-weight: bold;
   position: relative;
   z-index: 0;
+}
+.location input {
+  background: #EAEAEA;
+  border: none;
+  height: 19px;
+  width: 115px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.location input:focus-visible {
+  outline: none;
 }
 
 .reservation {
@@ -115,70 +118,6 @@ body {
   text-align: center;
   font-size: 18px;
 }
-.reservation button {
-  margin-top: 10px;
-  height: 50px;
-  width: 218px;
-  border-radius: 25px;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  color: white;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
-  border: none;
-  font-size: 16px;
-}
-.reservation button:hover {
-  filter: brightness(105%);
-  box-shadow: 0px 8px 14px 0px rgba(0, 0, 0, 0.2509803922);
-}
-
-.functioning {
-  margin: 30px 0;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.functioning h2 {
-  margin: 0;
-}
-.functioning .step {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-}
-.functioning .step span {
-  height: 24px;
-  width: 24px;
-  border-radius: 25px;
-  background-color: #9356DC;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  position: absolute;
-  z-index: 1;
-  font-size: 14px;
-}
-.functioning .step div {
-  height: 72px;
-  width: calc(100% - 12px);
-  display: flex;
-  align-items: center;
-  background-color: #F6F6F6;
-  border-radius: 20px;
-  position: relative;
-  left: 12px;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
-}
-.functioning .step div img {
-  left: 30px;
-  position: relative;
-}
-.functioning .step div p {
-  position: relative;
-  left: 55px;
-  font-weight: bold;
-}
 
 * {
   font-family: "Roboto", sans-serif;
@@ -186,22 +125,6 @@ body {
 
 body {
   margin: 0;
-}
-
-.logo {
-  height: 63px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
-  position: relative;
-  z-index: 1;
-}
-.logo h1 {
-  font-family: "Shrikhand", sans-serif;
-  margin: 0;
-  font-size: 30px;
-  font-style: italic;
 }
 
 .location {
@@ -283,7 +206,7 @@ body {
   font-size: 14px;
 }
 .functioning .steps .step div {
-  height: 72px;
+  height: auto;
   width: calc(100% - 12px);
   display: flex;
   align-items: center;
@@ -293,14 +216,22 @@ body {
   left: 12px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
 }
-.functioning .steps .step div img {
-  left: 30px;
-  position: relative;
+.functioning .steps .step div i {
+  margin-left: 30px;
+  color: rgb(126, 126, 126);
+}
+.functioning .steps .step div .fa-store {
+  color: rgb(147, 86, 220);
 }
 .functioning .steps .step div p {
-  position: relative;
-  left: 55px;
+  margin-top: 0;
+  min-height: 72px;
+  margin-bottom: 0;
   font-weight: bold;
+  margin-left: 20px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
 }
 
 .restaurants {
@@ -316,7 +247,11 @@ body {
   flex-direction: column;
   gap: 15px;
 }
-.restaurants .restaurant-cards .restaurant-card {
+.restaurants .restaurant-cards a {
+  text-decoration: none;
+  color: black;
+}
+.restaurants .restaurant-cards a .restaurant-card {
   border-radius: 15px;
   overflow: hidden;
   height: 251px;
@@ -324,8 +259,23 @@ body {
   display: flex;
   flex-direction: column;
   background-color: white;
+  position: relative;
 }
-.restaurants .restaurant-cards .restaurant-card .restaurant-image {
+.restaurants .restaurant-cards a .restaurant-card .newTag {
+  position: absolute;
+  background-color: rgb(153, 226, 208);
+  color: rgb(0, 135, 102);
+  height: 29px;
+  width: 80px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 13px;
+  left: calc(100% - 100px);
+}
+.restaurants .restaurant-cards a .restaurant-card .restaurant-image {
   width: 100%;
   height: 231px;
   top: -57px;
@@ -333,10 +283,10 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.restaurants .restaurant-cards .restaurant-card * {
+.restaurants .restaurant-cards a .restaurant-card * {
   margin: 0;
 }
-.restaurants .restaurant-cards .restaurant-card .card-content {
+.restaurants .restaurant-cards a .restaurant-card .card-content {
   position: relative;
   top: -57px;
   margin: 15px;
@@ -344,77 +294,20 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.restaurants .restaurant-cards .restaurant-card .card-content .card-text {
+.restaurants .restaurant-cards a .restaurant-card .card-content .card-text {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.restaurants .restaurant-cards .restaurant-card .card-content .card-text h2 {
+.restaurants .restaurant-cards a .restaurant-card .card-content .card-text h2 {
   font-size: 18px;
 }
-.restaurants .restaurant-cards .restaurant-card .card-content .card-text p {
+.restaurants .restaurant-cards a .restaurant-card .card-content .card-text p {
   font-size: 17px;
-}
-.restaurants .restaurant-cards .restaurant-card .card-content .image {
-  position: relative;
-  z-index: 1;
-  background: url("../assets/images/icons/heart.png");
-  width: 22px;
-  height: 21px;
-}
-.restaurants .restaurant-cards .restaurant-card .card-content .image:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: scaleY(0);
-  transform-origin: bottom center;
-  background: url("../assets/images/icons/colorHeart.png");
-  z-index: -1;
-  transition: transform 0.5s;
-}
-.restaurants .restaurant-cards .restaurant-card .card-content .image:hover::after {
-  transform: scaleY(1);
-}
-.restaurants .restaurant-cards .restaurant-card .card-content image:hover {
-  opacity: 0;
-}
-
-footer {
-  background-color: #353535;
-  color: white;
-  padding: 30px;
-}
-footer h3 {
-  font-family: "Shrikhand", sans-serif;
-  margin: 0;
-  font-size: 18px;
-  font-style: italic;
-  margin-bottom: 30px;
-}
-footer div {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-footer div div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-}
-footer div div img {
-  width: 11px;
-  height: 13px;
-}
-footer div div p {
-  margin: 0;
 }
 
 @media (width > 1024px) {
-  .reservation h1,
+  .reservation h2,
   .reservation p {
     width: 100%;
   }
@@ -435,24 +328,7 @@ footer div div p {
          column-gap: 100px;
     row-gap: 50px;
   }
-  .restaurants .restaurant-cards .restaurant-card {
+  .restaurants .restaurant-cards a {
     flex: 1 0 40%;
-  }
-  footer {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 40px 30px 20px 30px;
-  }
-  footer h3 {
-    margin: 0;
-  }
-  footer div {
-    flex-direction: row;
-  }
-  footer div .imaged-link {
-    width: 190px;
-  }
-  footer div .link {
-    width: 130px;
   }
 }/*# sourceMappingURL=homepage.css.map */

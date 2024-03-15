@@ -1,0 +1,159 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0
+}
+
+button {
+    margin-top: 10px;
+    height: 50px;
+    width: 186px;
+    border-radius: 25px;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    color: white;
+    box-shadow: 0px 4px 10px 0px #00000040;
+    border: none;
+    font-size: 16px;
+}
+
+@keyframes coloredHeart {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes heart {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+button:hover {
+    filter: brightness(105%);
+    box-shadow: 0px 8px 14px 0px #00000040;
+}
+
+.heart-icon {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    width: 24px;
+
+    i {
+        position: absolute;
+    }
+
+    .fa-solid::before {
+        opacity: 0;
+        background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.heart-icon:hover {
+    .fa-regular::before {
+        animation: heart 2s
+    }
+
+    .fa-solid::before {
+        animation: coloredHeart 2s;
+    }
+}
+
+header{
+    .logo {
+        height: 63px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 2px 4px 0px #00000026;
+        position: relative;
+        z-index: 1;
+    
+        h1 {
+            font-family: 'Shrikhand', sans-serif;
+            margin: 0;
+            font-size: 30px;
+            font-style: italic;
+        }
+    }
+}
+
+
+footer {
+    background-color: #353535;
+    color: white;
+    padding: 20px;
+
+    h3 {
+        font-family: 'Shrikhand', sans-serif;
+        margin: 0;
+        font-size: 18px;
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .link {
+            a{
+                text-decoration: none;
+                color : white
+            }
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+
+            img {
+                width: 11px;
+                height: 13px;
+            }
+
+            p {
+                margin: 0
+            }
+        }
+    }
+}
+
+@media (width > 1024px) {
+    footer {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 40px 30px 20px 30px;
+
+        h3 {
+            margin: 0;
+        }
+
+        div {
+            flex-direction: row;
+
+            .imaged-link {
+                width: 190px;
+            }
+
+            .link {
+                width: 130px;
+            }
+        }
+    }
+}
